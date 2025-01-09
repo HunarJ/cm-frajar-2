@@ -1,0 +1,17 @@
+import React from "react";
+import { Heading } from "./styles";
+import { useFadeAnmation } from "hooks/useFadeAnimation";
+
+interface IMainTitleProps {
+  children: React.ReactNode;
+  color: string;
+}
+
+const MainTitle = ({ children, color }: IMainTitleProps) => {
+  const { isVisible, ref } = useFadeAnmation();
+ 
+
+  return <Heading ref={ref} id="slide-up-title" className={isVisible ? 'visible' : ''} color={color}>{children}</Heading>;
+};
+
+export default MainTitle;
